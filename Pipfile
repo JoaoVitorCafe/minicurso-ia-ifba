@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+langchain = "*"
+langchain-google-genai = "*"
+python-dotenv = "*"
+langchain-core = "*"
+pypdf = "*"
+langchain-chroma = "*"
+chromadb = "*"
+langchain-community = "*"
+langchain-classic = "*"
+langchain-openai = "*"
+langchain-postgres = "*"
+psycopg2 = "*"
+langsmith = "*"
+langgraph-checkpoint-postgres = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.13"
