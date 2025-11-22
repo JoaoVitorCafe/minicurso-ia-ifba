@@ -27,7 +27,7 @@ def prompt_with_context(request: ModelRequest) -> str:
 
     system_message = SystemMessage(content=f"You are a helpful assistant. Use the following context in your response: {docs_content}")
 
-    return system_message
+    return system_message.content
 
 agent = create_agent(llm, tools=[], middleware=[prompt_with_context])
 

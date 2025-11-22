@@ -1,7 +1,3 @@
-
-
-# Configuração de chaves de API
-from google.colab import userdata
 import os
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -11,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-pdf_path = "/content/TCC - João Vítor Café.pdf"
+pdf_path = "pdfs\TCC - João Vítor Café.pdf"
 loader = PyPDFLoader(pdf_path)
 docs = loader.load()
 

@@ -19,7 +19,7 @@ Você é um assistente que responde perguntas sobre conhecimentos gerais.
 """
 
 agent = create_agent(
-    model="openai:gpt-4.1-2025-04-14", # Modelo demonstrativo do vídeo
+    model="openai:gpt-4.1-2025-04-14", # Modelo demonstrativo
     tools=[],
     system_prompt=prompt,
     middleware=[
