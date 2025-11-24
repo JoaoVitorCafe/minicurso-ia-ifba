@@ -22,20 +22,15 @@ with PostgresSaver.from_conn_string(conn_string) as memory:
 
     all_messages = []
 
-    for checkpoint_tuple in checkpoints:
-        checkpoint_state = checkpoint_tuple.checkpoint
-
-        channel_values = checkpoint_state.get("channel_values", {})
-        messages = channel_values.get("messages", [])
-
-        for msg in messages:
-            msg_type = getattr(msg, "type", None)
-            msg_content = getattr(msg, "content", None)
-
-            all_messages.append({
-                "type": msg_type,
-                "content": msg_content
-            })
+    last_checkpoint = checkpoints[0]
+    last_checkpoint_state = last_checkpoint.checkpoint
+    last_checkpoint_channel_values = last_checkpoint_state.get("channel_values", {})
+    last_checkpoint_messages = last_checkpoint_channel_values.get("messages", [])
+    for msg in last_checkpoint_messages:
+        all_messages.append({
+            "type": msg.type,
+            "content": msg.content
+        })
 
     print(json.dumps(all_messages, indent=2, ensure_ascii=False))
 
